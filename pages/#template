@@ -10,7 +10,9 @@
 
   <!-- Inclusion du header -->
   <div data-include="../components/header.html"></div>
-  
+
+    <!-- Contenu à ajouter -->
+
   <div data-include="../components/footer.html"></div>
 
 </body>
