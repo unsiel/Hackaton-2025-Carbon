@@ -2,15 +2,31 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Page Modulaire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon – Évalue ton impact</title>
   <link rel="stylesheet" href="../style/style.css">
-  <script defer src="../functions/script.js"></script>
+  <script type="text/javascript" src="../functions/home.js"></script>
 </head>
 <body>
+  <header>
+    <h1><span class="green">C</span>arbon</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="#profile">Profil</a></li>
+        <li><a href="#account">Mon compte</a></li>
+        <li><a href="friends.html">Amis</a></li>
+        <li><a href="astuces.html">Astuces</a></li>
+        <li><a href="cgu.html">CGU</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="partenariats.html">Partenariats</a></li>
+      </ul>
+    </nav>
+    
+    
+  </header>
 
-  <!-- Inclusion du header -->
-  <div data-include="../components/header.html"></div>
-
+  <section id="tips" class="active">
     <h2>Conseils écologiques</h2>
 
     <h3>🚶‍♂️ Transport</h3>
@@ -62,9 +78,10 @@
       <li>Inspire-toi de tes amis ou influenceurs écolos, pour rester motivé(e).</li>
       <li>Chaque geste compte, même les plus petits.</li>
     </ul>
+  </section>
 
-  <!-- Inclusion du footer -->
-  <div data-include="../components/footer.html"></div>
-
+  <footer>
+    <p>&copy; 2025 Carbon. Tous droits réservés.</p>
+  </footer>
 </body>
 </html>
