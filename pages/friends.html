@@ -2,14 +2,71 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Page Modulaire</title>
+  <title>Mes Amis - Impact Carbone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script defer src="../functions/script.js"></script>
+  <link rel="stylesheet" href="../style/style.css">
 </head>
-<body>
+<body class="bg-dark text-white">
 
   <!-- Inclusion du header -->
   <div data-include="../components/header.html"></div>
-  
+
+  <section id="friends" class="active container py-5">
+    <h2 class="text-green mb-4">👥 Mes amis</h2>
+
+    <p class="mb-4">Compare ton impact carbone avec celui de tes amis. Tu peux les défier pour réduire ensemble vos émissions !</p>
+
+    <div class="table-responsive mb-4">
+      <table class="table table-dark table-striped table-bordered text-center align-middle">
+        <thead class="table-success text-dark">
+          <tr>
+            <th>Avatar</th>
+            <th>Nom</th>
+            <th>Ville</th>
+            <th>Impact CO₂ (kg/mois)</th>
+            <th>Rang</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Alex" width="50" class="rounded-circle" alt="Avatar Alex"></td>
+            <td>Alex</td>
+            <td>Lyon</td>
+            <td>110</td>
+            <td>🥉</td>
+          </tr>
+          <tr>
+            <td><img src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Clara" width="50" class="rounded-circle" alt="Avatar Clara"></td>
+            <td>Clara</td>
+            <td>Paris</td>
+            <td>95</td>
+            <td>🥈</td>
+          </tr>
+          <tr class="table-success text-dark fw-bold">
+            <td><img src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Toi" width="50" class="rounded-circle border border-3 border-success" alt="Ton Avatar"></td>
+            <td>Toi</td>
+            <td>Le Havre</td>
+            <td>80</td>
+            <td>🥇</td>
+          </tr>
+          <tr>
+            <td><img src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Lucas" width="50" class="rounded-circle" alt="Avatar Lucas"></td>
+            <td>Lucas</td>
+            <td>Marseille</td>
+            <td>145</td>
+            <td>4️⃣</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center">
+      <p>💬 Envie de progresser ensemble ? Lance un défi ou partage tes conseils à tes amis dans l'app !</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <div data-include="../components/footer.html"></div>
 
 </body>
