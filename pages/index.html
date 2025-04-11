@@ -5,29 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carbon - Évalue ton impact</title>
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Custom scripts -->
-  <script src="../functions/script.js" defer></script>
+
+  <!-- Scripts -->
+  <script src="../functions/script.js"></script>
   <script src="../functions/home.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="bg-gray-950 text-white min-h-screen font-sans">
 
-  <!-- Header Sticky -->
+  <!-- Header -->
   <header class="sticky top-0 z-50 bg-[#1f1f1f] border-b border-gray-700 shadow-md">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between">
-      
-      <!-- Logo SVG intégré -->
-      <a href="index.html" class="block w-48">
-        <img src="../assets/Logo avec texte.svg" alt="Logo Carbon" class="w-full h-20" />
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="index.html" class="w-40 sm:w-48">
+        <img src="../assets/Logo sans texte.svg" alt="Logo Carbon mobile" class="sm:hidden w-full h-12" />
+        <img src="../assets/Logo avec texte.svg" alt="Logo Carbon" class="hidden sm:block w-full h-20" />
       </a>
 
-      <!-- Navigation -->
-      <nav class="mt-4 sm:mt-0">
-        <ul class="flex flex-col sm:flex-row gap-4 text-white text-sm font-medium">
+      <!-- Burger icon -->
+      <button id="burger-btn" class="sm:hidden text-white focus:outline-none" aria-label="Menu">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Nav (desktop) -->
+      <nav class="hidden sm:block">
+        <ul class="flex gap-4 text-white text-sm font-medium">
           <li><a href="index.html" class="hover:text-[#00ff88] transition">Analyse</a></li>
           <li><a href="compte.html" class="hover:text-[#00ff88] transition">Mon compte</a></li>
           <li><a href="friends.html" class="hover:text-[#00ff88] transition">Amis</a></li>
@@ -35,49 +43,73 @@
         </ul>
       </nav>
     </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="sm:hidden hidden px-4 pb-4">
+      <ul class="flex flex-col gap-2 text-white text-sm font-medium">
+        <li><a href="index.html" class="block py-2 px-4 rounded hover:bg-[#00ff88] hover:text-black">Analyse</a></li>
+        <li><a href="compte.html" class="block py-2 px-4 rounded hover:bg-[#00ff88] hover:text-black">Mon compte</a></li>
+        <li><a href="friends.html" class="block py-2 px-4 rounded hover:bg-[#00ff88] hover:text-black">Amis</a></li>
+        <li><a href="astuces.html" class="block py-2 px-4 rounded hover:bg-[#00ff88] hover:text-black">Astuces</a></li>
+      </ul>
+    </div>
   </header>
 
-  <!-- Section Dashboard -->
-  <section id="dashboard" class="max-w-4xl mx-auto px-4 py-10">
-    <h2 class="text-2xl font-bold mb-6 text-[#00ff88]">Mon Impact Carbone</h2>
+  <!-- Dashboard Section -->
+  <section id="dashboard" class="max-w-2xl mx-auto px-4 py-8 space-y-8">
+    <h2 class="text-2xl sm:text-3xl font-bold text-[#00ff88] text-center sm:text-left">🌍 Mon Impact Carbone</h2>
 
-    <div class="bg-gray-800 p-6 rounded-2xl shadow-md mb-10">
-      <canvas id="pieChart" class="w-full max-w-md mx-auto"></canvas>
+    <!-- Graph -->
+    <div class="bg-gray-800 p-4 sm:p-6 rounded-2xl shadow-md">
+      <canvas id="pieChart" class="w-full max-w-xs sm:max-w-md mx-auto"></canvas>
     </div>
 
-    <h2 class="text-xl font-semibold mb-4">Ajouter une activité</h2>
+    <!-- Formulaire -->
+    <div>
+      <h3 class="text-xl font-semibold mb-4 text-center sm:text-left">🚗 Ajouter une activité</h3>
 
-    <form id="activity-form" class="bg-gray-800 p-6 rounded-2xl shadow-md space-y-4">
-      <div>
-        <label class="block mb-2 text-sm">Type de transport :</label>
-        <select name="transport" class="w-full p-2 rounded bg-gray-900 text-white border border-gray-600">
-          <option value="">-- Choisir --</option>
-          <option value="voiture">Voiture</option>
-          <option value="bus">Bus</option>
-          <option value="train">Train</option>
-          <option value="avion">Avion</option>
-        </select>
-      </div>
+      <form id="activity-form" class="bg-gray-800 p-4 sm:p-6 rounded-2xl shadow-md space-y-4">
+        <div>
+          <label class="block mb-2 text-sm">Type de transport :</label>
+          <select name="transport" class="w-full p-2 rounded bg-gray-900 text-white border border-gray-600">
+            <option value="">-- Choisir --</option>
+            <option value="voiture">Voiture</option>
+            <option value="bus">Bus</option>
+            <option value="train">Train</option>
+            <option value="avion">Avion</option>
+          </select>
+        </div>
 
-      <div>
-        <label class="block mb-2 text-sm">Distance (km) :</label>
-        <input type="number" name="distance" class="w-full p-2 rounded bg-gray-900 text-white border border-gray-600" />
-      </div>
+        <div>
+          <label class="block mb-2 text-sm">Distance (km) :</label>
+          <input type="number" name="distance" class="w-full p-2 rounded bg-gray-900 text-white border border-gray-600" />
+        </div>
 
-      <button type="submit" class="bg-[#00ff88] hover:bg-[#00e67a] text-black font-semibold py-2 px-4 rounded transition">
-        Ajouter
-      </button>
-    </form>
+        <button type="submit" class="w-full sm:w-auto bg-[#00ff88] hover:bg-[#00e67a] text-black font-semibold py-2 px-4 rounded transition">
+          Ajouter
+        </button>
+      </form>
+    </div>
 
     <!-- Historique -->
-    <div id="history" class="mt-10">
-      <h3 class="text-lg font-semibold mb-4">Historique des activités</h3>
-      <ul id="history-list" class="space-y-2 bg-gray-800 p-4 rounded-2xl shadow-md"></ul>
+    <div id="history" class="space-y-4">
+      <h3 class="text-lg font-semibold text-center sm:text-left">📜 Historique des activités</h3>
+      <ul id="history-list" class="space-y-2 bg-gray-800 p-4 rounded-2xl shadow-md text-sm"></ul>
     </div>
   </section>
 
-  <!-- Footer include -->
+  <!-- Footer -->
   <div data-include="../components/footer.html"></div>
+
+  <!-- Burger Menu Script -->
+  <script>
+    const burgerBtn = document.getElementById('burger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    burgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 
 </body>
 </html>

@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mon Compte - Impact Carbone</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="../functions/script.js"></script>
   <link rel="stylesheet" href="../style/style.css">
 </head>
+
 <body class="bg-gray-950 text-white min-h-screen font-sans">
 
   <!-- Header -->
   <div data-include="../components/header.html"></div>
 
   <section id="account" class="max-w-4xl mx-auto py-12 px-4">
-    <h2 class="text-3xl font-bold text-green-400 mb-8">👤 Mon compte</h2>
+    <h2 class="text-3xl sm:text-4xl font-bold text-green-400 mb-8 text-center">👤 Mon compte</h2>
 
     <div class="flex justify-center">
-      <div class="w-full max-w-xl bg-gray-800 rounded-xl shadow-xl p-6 fade-in">
+      <div class="w-full max-w-xl bg-gray-800 rounded-2xl shadow-xl p-6 transition-all duration-300">
+
+        <!-- Profil -->
         <div class="text-center mb-6">
           <img src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=carbon" alt="Avatar"
-            class="rounded-full border-4 border-green-500 w-24 h-24 mx-auto">
+            class="rounded-full border-4 border-green-500 w-24 h-24 mx-auto" />
           <h4 id="display-name" class="mt-4 text-xl font-semibold">Nom de l'utilisateur</h4>
           <p id="display-city" class="text-gray-300">Ville</p>
           <p id="display-email" class="text-sm text-gray-400">email@example.com</p>
@@ -27,15 +31,16 @@
 
         <hr class="border-gray-600 my-4">
 
+        <!-- Bouton toggle -->
         <div class="text-center">
-          <button onclick="toggleEdit()"
+          <button id="edit-toggle"
             class="px-5 py-2 rounded border border-green-500 text-green-400 hover:bg-green-500 hover:text-black transition">
             ✏️ Modifier le profil
           </button>
         </div>
 
         <!-- Formulaire caché -->
-        <form id="edit-form" class="mt-6 hidden space-y-4" onsubmit="saveAccount(); return false;">
+        <form id="edit-form" class="mt-6 hidden space-y-4" aria-hidden="true" onsubmit="saveAccount(); return false;" role="form">
           <div>
             <label for="user-name" class="block mb-1 text-sm text-gray-300">Nom</label>
             <input type="text" id="user-name" class="w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400">
@@ -55,6 +60,7 @@
             </button>
           </div>
         </form>
+
       </div>
     </div>
   </section>
@@ -65,28 +71,39 @@
   <!-- Script perso -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Chargement depuis localStorage
       const name = localStorage.getItem("user-name") || "Nom de l'utilisateur";
       const email = localStorage.getItem("user-email") || "email@example.com";
       const city = localStorage.getItem("user-city") || "Ville";
 
+      // Affichage
       document.getElementById("display-name").textContent = name;
       document.getElementById("display-email").textContent = email;
       document.getElementById("display-city").textContent = city;
 
+      // Pré-remplissage du formulaire
       document.getElementById("user-name").value = name;
       document.getElementById("user-email").value = email;
       document.getElementById("user-city").value = city;
     });
 
+    // Affiche/Masque le formulaire
     function toggleEdit() {
       const form = document.getElementById("edit-form");
-      form.classList.toggle("hidden");
+      const isHidden = form.classList.toggle("hidden");
+      form.setAttribute("aria-hidden", isHidden);
+      if (!isHidden) {
+        document.getElementById("user-name").focus();
+      }
     }
 
+    document.getElementById("edit-toggle").addEventListener("click", toggleEdit);
+
+    // Sauvegarde et mise à jour
     function saveAccount() {
-      const name = document.getElementById("user-name").value;
-      const email = document.getElementById("user-email").value;
-      const city = document.getElementById("user-city").value;
+      const name = document.getElementById("user-name").value.trim();
+      const email = document.getElementById("user-email").value.trim();
+      const city = document.getElementById("user-city").value.trim();
 
       localStorage.setItem("user-name", name);
       localStorage.setItem("user-email", email);

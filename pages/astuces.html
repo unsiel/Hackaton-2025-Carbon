@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carbon - Astuces</title>
   <script defer src="../functions/script.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-950 text-white min-h-screen font-sans">
 
-  <!-- Inclusion du header -->
+  <!-- Header include -->
   <div data-include="../components/header.html"></div>
 
-  <section id="tips" class="active max-w-4xl mx-auto px-4 py-10">
-    <h2 class="text-emerald-400 text-3xl font-bold mb-6">Conseils écologiques</h2>
+  <!-- Section Astuces -->
+  <section id="tips" class="max-w-3xl mx-auto px-4 sm:px-6 py-10 space-y-10">
+    <h2 class="text-emerald-400 text-2xl sm:text-3xl font-bold text-center">🌿 Conseils écologiques</h2>
 
-    <div class="space-y-8">
+    <div class="space-y-10">
+      <!-- Transport -->
       <div>
-        <h3 class="text-xl font-semibold mb-3">🚶‍♂️ Transport</h3>
-        <ul class="list-disc list-inside space-y-2">
+        <h3 class="text-lg sm:text-xl font-semibold mb-3">🚶‍♂️ Transport</h3>
+        <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
           <li>Favorise les transports doux : marche, vélo ou trottinette pour les trajets courts.</li>
-          <li>Utilise le train plutôt que l’avion dès que possible (notamment sur les trajets < 1000 km).</li>
+          <li>Utilise le train plutôt que l’avion dès que possible (notamment sur les trajets &lt; 1000 km).</li>
           <li>Covoiturage FTW : BlaBlaCar, Karos, Klaxit… tu divises ton empreinte par 2 ou 3.</li>
           <li>Multimodalité : combine train + vélo ou transports en commun + marche.</li>
           <li>Réduis la fréquence des longs trajets pro en remplaçant certains déplacements par de la visio.</li>
@@ -27,56 +31,61 @@
         </ul>
       </div>
 
+      <!-- Alimentation -->
       <div>
-        <h3 class="text-xl font-semibold mb-3">🥗 Alimentation</h3>
-        <ul class="list-disc list-inside space-y-2">
-          <li>Réduis ta consommation de viande, surtout de bœuf et d’agneau (gros émetteurs de CO2).</li>
-          <li>Fais la part belle aux légumes de saison et locaux, moins transformés = moins d’émissions.</li>
-          <li>Utilise tes cartes de fidélité pour suivre et adapter tes habitudes d’achat en supermarché.</li>
-          <li>Privilégie les produits labellisés (Bio, MSC, Label Rouge...), leur impact est souvent mieux maîtrisé.</li>
-          <li>Stop au gaspillage : planifie tes repas, cuisine les restes, et conserve mieux.</li>
+        <h3 class="text-lg sm:text-xl font-semibold mb-3">🥗 Alimentation</h3>
+        <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+          <li>Réduis ta consommation de viande, surtout de bœuf et d’agneau.</li>
+          <li>Favorise les légumes de saison et locaux.</li>
+          <li>Utilise tes cartes de fidélité pour suivre tes habitudes d’achat.</li>
+          <li>Privilégie les produits labellisés (Bio, MSC, Label Rouge...)</li>
+          <li>Stop au gaspillage : planifie tes repas, cuisine les restes.</li>
           <li>Teste les applis anti-gaspi comme Too Good To Go ou Phenix.</li>
         </ul>
       </div>
 
+      <!-- Consommation domestique -->
       <div>
-        <h3 class="text-xl font-semibold mb-3">🏠 Consommation domestique</h3>
-        <ul class="list-disc list-inside space-y-2">
-          <li>Baisse ton chauffage d’un degré = ~7% d’économie d’énergie.</li>
-          <li>Équipe-toi d’ampoules LED, elles consomment jusqu’à 10x moins.</li>
-          <li>Débranche les appareils en veille, ou utilise une multiprise coupe-veille.</li>
-          <li>Installe des thermostats programmables pour ne chauffer que quand nécessaire.</li>
-          <li>Réduis la durée des douches à 5 minutes max → -30% d’eau chaude utilisée.</li>
-          <li>Passe à un fournisseur d’énergie verte, comme Enercoop ou Planète Oui.</li>
+        <h3 class="text-lg sm:text-xl font-semibold mb-3">🏠 Consommation domestique</h3>
+        <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+          <li>Baisse ton chauffage d’un degré = ~7% d’économie.</li>
+          <li>Équipe-toi d’ampoules LED.</li>
+          <li>Débranche les appareils en veille.</li>
+          <li>Installe des thermostats programmables.</li>
+          <li>Réduis les douches à 5 minutes max.</li>
+          <li>Passe à un fournisseur d’énergie verte.</li>
         </ul>
       </div>
 
+      <!-- Numérique -->
       <div>
-        <h3 class="text-xl font-semibold mb-3">📱 Données & numérique</h3>
-        <ul class="list-disc list-inside space-y-2">
-          <li>Désactive la lecture automatique des vidéos sur les réseaux pour limiter les flux de données.</li>
-          <li>Utilise le Wi-Fi plutôt que les données mobiles, surtout pour le streaming.</li>
-          <li>Supprime les mails inutiles, en particulier les newsletters non lues (1 mail stocké = 10g de CO2/an).</li>
-          <li>Optimise ton cloud : stocke localement ce que tu n’as pas besoin de synchroniser.</li>
-          <li>Réduis la résolution de tes vidéos en 720p voire 480p quand c’est suffisant.</li>
-          <li>Fais le ménage régulièrement dans tes applis, photos, fichiers inutiles = moins de charge serveur.</li>
+        <h3 class="text-lg sm:text-xl font-semibold mb-3">📱 Données & numérique</h3>
+        <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+          <li>Désactive la lecture auto des vidéos.</li>
+          <li>Utilise le Wi-Fi pour le streaming.</li>
+          <li>Supprime les mails inutiles.</li>
+          <li>Stocke localement si pas besoin de synchronisation.</li>
+          <li>Réduis la résolution des vidéos.</li>
+          <li>Fais régulièrement le ménage numérique.</li>
         </ul>
       </div>
 
+      <!-- Motivation & général -->
       <div>
-        <h3 class="text-xl font-semibold mb-3">🌱 Conseils généraux & motivation</h3>
-        <ul class="list-disc list-inside space-y-2">
-          <li>Suis ton évolution dans l’app et observe les progrès semaine après semaine.</li>
-          <li>Fixe-toi un objectif CO2 mensuel, comme un budget, et suis-le.</li>
-          <li>Rejoins des défis communautaires ("1 mois sans voiture", "semaine végétarienne", etc.).</li>
-          <li>Partage tes astuces et progrès avec tes amis dans l’app (option “communauté”).</li>
-          <li>Inspire-toi de tes amis ou influenceurs écolos, pour rester motivé(e).</li>
+        <h3 class="text-lg sm:text-xl font-semibold mb-3">🌱 Motivation & gestes simples</h3>
+        <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+          <li>Suis ton évolution dans l’app.</li>
+          <li>Fixe-toi un objectif CO2 mensuel.</li>
+          <li>Rejoins des défis communautaires.</li>
+          <li>Partage tes astuces dans l’app.</li>
+          <li>Inspire-toi des influenceurs écolos.</li>
           <li>Chaque geste compte, même les plus petits.</li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- Footer include -->
   <div data-include="../components/footer.html"></div>
 
 </body>

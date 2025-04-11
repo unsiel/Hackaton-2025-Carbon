@@ -2,78 +2,103 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Page Modulaire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Modulaire - Politique de Confidentialité</title>
   <script defer src="../functions/script.js"></script>
+  <link rel="stylesheet" href="../style/style.css">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> --> <!-- Décommenter si Tailwind est utilisé -->
 </head>
-<body>
 
-  <!-- Inclusion du header -->
+<body class="bg-white text-gray-900 leading-relaxed font-sans">
+
+  <!-- Header inclus -->
   <div data-include="../components/header.html"></div>
 
-  <section id="confidentialite" class="active">
-    <h2>Politique de Confidentialité</h2>
+  <main role="main" class="max-w-4xl mx-auto px-6 py-12">
+    <article id="confidentialite">
+      <h1 class="text-3xl font-bold mb-8">🔐 Politique de Confidentialité</h1>
 
-    <h3>1. Responsable du traitement</h3>
-    <p>Le traitement des données personnelles est effectué par la société Carbon, située à [adresse], joignable à l’adresse : [email support].</p>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">1. Responsable du traitement</h2>
+        <p>Le traitement des données personnelles est effectué par la société Carbon, située à [adresse], joignable à l’adresse : [email support].</p>
+      </section>
 
-    <h3>2. Données collectées</h3>
-    <p>Nous collectons uniquement les données strictement nécessaires à l’analyse de votre empreinte carbone, notamment :</p>
-    <ul>
-      <li>Données d’identification : nom, email.</li>
-      <li>Données issues d’API connectées : historiques de transport, achats, consommation énergétique, navigation, etc.</li>
-      <li>Données d’usage : statistiques d’utilisation de l’application.</li>
-    </ul>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">2. Données collectées</h2>
+        <p>Nous collectons uniquement les données strictement nécessaires à l’analyse de votre empreinte carbone :</p>
+        <ul class="list-disc list-inside mt-2 space-y-1">
+          <li>Données d’identification : nom, email.</li>
+          <li>Données issues d’API connectées : historiques de transport, achats, consommation énergétique, navigation, etc.</li>
+          <li>Données d’usage : statistiques d’utilisation de l’application.</li>
+        </ul>
+      </section>
 
-    <h3>3. Finalités de traitement</h3>
-    <p>Les données sont traitées pour :</p>
-    <ul>
-      <li>Analyser les émissions de CO2 liées à vos usages ;</li>
-      <li>Vous proposer des conseils personnalisés ;</li>
-      <li>Améliorer notre service (statistiques globales anonymisées) ;</li>
-      <li>Vous envoyer des notifications ou emails d'information (opt-in uniquement) ;</li>
-      <li>Afficher des contenus partenaires éco-responsables.</li>
-    </ul>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">3. Finalités de traitement</h2>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Analyser les émissions de CO2 liées à vos usages</li>
+          <li>Vous proposer des conseils personnalisés</li>
+          <li>Améliorer notre service (statistiques globales anonymisées)</li>
+          <li>Vous envoyer des notifications ou emails d'information (opt-in uniquement)</li>
+          <li>Afficher des contenus partenaires éco-responsables</li>
+        </ul>
+      </section>
 
-    <h3>4. Base légale</h3>
-    <p>Le traitement repose sur :</p>
-    <ul>
-      <li>Votre consentement explicite (connexion aux API, envoi d’emails) ;</li>
-      <li>Notre intérêt légitime à améliorer le service ;</li>
-      <li>Le respect d’une obligation légale éventuelle.</li>
-    </ul>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">4. Base légale</h2>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Votre consentement explicite (connexion aux API, envoi d’emails)</li>
+          <li>Notre intérêt légitime à améliorer le service</li>
+          <li>Le respect d’une obligation légale éventuelle</li>
+        </ul>
+      </section>
 
-    <h3>5. Partage des données</h3>
-    <p>Vos données ne sont jamais revendues. Elles peuvent être partagées uniquement avec :</p>
-    <ul>
-      <li>Des partenaires techniques liés à l’hébergement et l’analyse des données ;</li>
-      <li>Des API tierces que vous avez explicitement connectées à votre compte ;</li>
-      <li>Des autorités compétentes uniquement en cas d’obligation légale.</li>
-    </ul>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">5. Partage des données</h2>
+        <p>Vos données ne sont jamais revendues. Elles peuvent être partagées uniquement avec :</p>
+        <ul class="list-disc list-inside mt-2 space-y-1">
+          <li>Des partenaires techniques liés à l’hébergement et l’analyse des données</li>
+          <li>Des API tierces que vous avez explicitement connectées à votre compte</li>
+          <li>Des autorités compétentes uniquement en cas d’obligation légale</li>
+        </ul>
+      </section>
 
-    <h3>6. Durée de conservation</h3>
-    <p>Les données sont conservées tant que le compte est actif. À la suppression du compte, les données sont automatiquement effacées sous 30 jours (ou immédiatement si vous en faites la demande).</p>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">6. Durée de conservation</h2>
+        <p>Les données sont conservées tant que le compte est actif. À la suppression du compte, les données sont automatiquement effacées sous 30 jours (ou immédiatement si vous en faites la demande).</p>
+      </section>
 
-    <h3>7. Hébergement des données</h3>
-    <p>Les données sont hébergées dans l’Union Européenne sur des serveurs sécurisés (OVH, Scaleway, etc.).</p>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">7. Hébergement des données</h2>
+        <p>Les données sont hébergées dans l’Union Européenne sur des serveurs sécurisés (OVH, Scaleway, etc.).</p>
+      </section>
 
-    <h3>8. Sécurité</h3>
-    <p>Nous mettons en œuvre des mesures techniques et organisationnelles pour garantir la confidentialité et l’intégrité de vos données : chiffrement, audits de sécurité, accès restreints, etc.</p>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">8. Sécurité</h2>
+        <p>Nous mettons en œuvre des mesures techniques et organisationnelles pour garantir la confidentialité et l’intégrité de vos données : chiffrement, audits de sécurité, accès restreints, etc.</p>
+      </section>
 
-    <h3>9. Vos droits</h3>
-    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
-    <ul>
-      <li>Accès à vos données ;</li>
-      <li>Rectification ;</li>
-      <li>Suppression ;</li>
-      <li>Portabilité ;</li>
-      <li>Limitation et opposition au traitement.</li>
-    </ul>
-    <p>Vous pouvez exercer vos droits via l’adresse : [email DPO].</p>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">9. Vos droits</h2>
+        <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+        <ul class="list-disc list-inside mt-2 space-y-1">
+          <li>Accès à vos données</li>
+          <li>Rectification</li>
+          <li>Suppression</li>
+          <li>Portabilité</li>
+          <li>Limitation et opposition au traitement</li>
+        </ul>
+        <p class="mt-2">Vous pouvez exercer vos droits via l’adresse : [email DPO].</p>
+      </section>
 
-    <h3>10. Cookies</h3>
-    <p>Des cookies techniques et statistiques peuvent être utilisés. Vous pouvez gérer vos préférences via le bandeau de consentement.</p>
-  </section>
+      <section>
+        <h2 class="text-xl font-semibold mb-2">10. Cookies</h2>
+        <p>Des cookies techniques et statistiques peuvent être utilisés. Vous pouvez gérer vos préférences via le bandeau de consentement.</p>
+      </section>
+    </article>
+  </main>
 
+  <!-- Footer inclus -->
   <div data-include="../components/footer.html"></div>
 
 </body>

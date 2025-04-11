@@ -1,76 +1,128 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mes Amis - Impact Carbone</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="../functions/script.js"></script>
   <link rel="stylesheet" href="../style/style.css">
 </head>
 <body class="bg-gray-950 text-white min-h-screen font-sans">
 
-  <!-- Inclusion du header -->
-  <div data-include="../components/header.html"></div>
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-[#1f1f1f] border-b border-gray-700 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between relative">
 
-  <section id="friends" class="active max-w-6xl mx-auto py-10 px-4">
+      <!-- Burger -->
+      <button id="burger-menu" class="text-white sm:hidden z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Logo -->
+      <a href="index.html" class="absolute left-1/2 transform -translate-x-1/2 sm:static sm:translate-x-0">
+        <img src="../assets/Logo sans texte.svg" alt="Logo Mobile" class="h-8 sm:hidden">
+        <img src="../assets/Logo avec texte.svg" alt="Logo Desktop" class="h-12 hidden sm:block">
+      </a>
+
+      <!-- Icône compte (mobile) -->
+      <a href="compte.html" class="text-white sm:hidden z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5.121 17.804A4 4 0 0112 15a4 4 0 016.879 2.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+      </a>
+
+      <!-- Navigation desktop -->
+      <nav class="hidden sm:flex gap-6 text-white text-sm font-medium">
+        <a href="index.html" class="hover:text-[#00ff88] transition">Analyse</a>
+        <a href="compte.html" class="hover:text-[#00ff88] transition">Mon compte</a>
+        <a href="friends.html" class="hover:text-[#00ff88] transition">Amis</a>
+        <a href="astuces.html" class="hover:text-[#00ff88] transition">Astuces</a>
+      </nav>
+    </div>
+
+    <!-- Navigation mobile -->
+    <div id="mobile-nav" class="sm:hidden hidden px-4 pb-4 bg-[#1f1f1f] space-y-2 text-sm">
+      <a href="index.html" class="block py-2 text-white hover:text-[#00ff88]">Analyse</a>
+      <a href="compte.html" class="block py-2 text-white hover:text-[#00ff88]">Mon compte</a>
+      <a href="friends.html" class="block py-2 text-white hover:text-[#00ff88]">Amis</a>
+      <a href="astuces.html" class="block py-2 text-white hover:text-[#00ff88]">Astuces</a>
+    </div>
+
+    <script>
+      document.getElementById('burger-menu').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById('mobile-nav').classList.toggle('hidden');
+      });
+    </script>
+  </header>
+
+  <!-- MAIN -->
+  <section id="friends" class="max-w-6xl mx-auto py-10 px-4">
     <h2 class="text-3xl text-green-400 font-bold mb-6">👥 Mes amis</h2>
+    <p class="mb-6 text-gray-300">Compare ton impact carbone avec celui de tes amis.</p>
 
-    <p class="mb-6 text-gray-300">Compare ton impact carbone avec celui de tes amis. Tu peux les défier pour réduire ensemble vos émissions !</p>
-
-    <div class="overflow-x-auto mb-6 rounded-lg shadow-lg">
+    <!-- TABLEAU Desktop -->
+    <div class="hidden sm:block overflow-x-auto mb-6 rounded-lg shadow-lg">
       <table class="min-w-full text-center table-auto border border-gray-700">
         <thead class="bg-gray-800">
           <tr class="text-green-400 uppercase text-sm">
             <th class="py-3 px-4">Avatar</th>
             <th class="py-3 px-4">Nom</th>
             <th class="py-3 px-4">Ville</th>
-            <th class="py-3 px-4">Impact CO₂ (kg/mois)</th>
+            <th class="py-3 px-4">Impact CO₂</th>
             <th class="py-3 px-4">Rang</th>
           </tr>
         </thead>
         <tbody class="bg-gray-700 text-white divide-y divide-gray-600">
-          <tr>
-            <td class="py-3"><img src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Alex" width="50" class="rounded-full mx-auto" alt="Avatar Alex"></td>
-            <td>Alex</td>
-            <td>Lyon</td>
-            <td>110</td>
-            <td>🥉</td>
-          </tr>
-          <tr>
-            <td class="py-3"><img src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Clara" width="50" class="rounded-full mx-auto" alt="Avatar Clara"></td>
-            <td>Clara</td>
-            <td>Paris</td>
-            <td>95</td>
-            <td>🥈</td>
-          </tr>
-          <tr class="bg-green-300 text-black font-bold">
-            <td class="py-3">
-              <img src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Toi" width="50"
-                class="rounded-full border-4 border-green-500 mx-auto" alt="Ton Avatar">
-            </td>
-            <td>Toi</td>
-            <td>Le Havre</td>
-            <td>80</td>
-            <td>🥇</td>
-          </tr>
-          <tr>
-            <td class="py-3"><img src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Lucas" width="50" class="rounded-full mx-auto" alt="Avatar Lucas"></td>
-            <td>Lucas</td>
-            <td>Marseille</td>
-            <td>145</td>
-            <td>4️⃣</td>
-          </tr>
+          <!-- Tes données ici -->
         </tbody>
       </table>
     </div>
 
+    <!-- CARTES Mobile -->
+    <div class="sm:hidden space-y-4 mb-6 max-w-md mx-auto">
+      <!-- Cartes individuelles comme avant -->
+    </div>
+
     <div class="text-center text-gray-300">
-      <p>💬 Envie de progresser ensemble ? Lance un défi ou partage tes conseils à tes amis dans l'app !</p>
+      <p>💬 Partage tes conseils à tes amis dans l'app !</p>
     </div>
   </section>
 
-  <!-- Footer -->
-  <div data-include="../components/footer.html"></div>
+  <!-- FOOTER -->
+  <footer class="bg-[#1f1f1f] border-t border-gray-700 mt-10">
+    <div class="max-w-6xl mx-auto py-6 px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <!-- Desktop -->
+      <div class="hidden sm:flex gap-6 text-gray-400">
+        <a href="index.html" class="hover:text-white">Analyse</a>
+        <a href="compte.html" class="hover:text-white">Mon compte</a>
+        <a href="friends.html" class="hover:text-white">Amis</a>
+        <a href="astuces.html" class="hover:text-white">Astuces</a>
+      </div>
+
+      <!-- Mobile -->
+      <div class="flex sm:hidden gap-6 text-white text-2xl">
+        <a href="index.html" aria-label="Analyse">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 3h18v18H3z"/>
+          </svg>
+        </a>
+        <a href="compte.html" aria-label="Compte">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 12c2.28 0 4-1.72 4-4s-1.72-4-4-4-4 1.72-4 4 1.72 4 4 4zM4 20c0-2.21 3.58-4 8-4s8 1.79 8 4" />
+          </svg>
+        </a>
+      </div>
+
+      <p class="text-sm text-gray-500">&copy; 2025 Carbon. Tous droits réservés.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
