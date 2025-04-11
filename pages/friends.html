@@ -66,32 +66,81 @@
     <p class="mb-6 text-gray-300">Compare ton impact carbone avec celui de tes amis.</p>
 
     <!-- TABLEAU Desktop -->
-    <div class="hidden sm:block overflow-x-auto mb-6 rounded-lg shadow-lg">
-      <table class="min-w-full text-center table-auto border border-gray-700">
-        <thead class="bg-gray-800">
-          <tr class="text-green-400 uppercase text-sm">
-            <th class="py-3 px-4">Avatar</th>
-            <th class="py-3 px-4">Nom</th>
-            <th class="py-3 px-4">Ville</th>
-            <th class="py-3 px-4">Impact CO₂</th>
-            <th class="py-3 px-4">Rang</th>
-          </tr>
-        </thead>
-        <tbody class="bg-gray-700 text-white divide-y divide-gray-600">
-          <!-- Tes données ici -->
-        </tbody>
-      </table>
-    </div>
+<div class="hidden sm:block overflow-x-auto mb-6 rounded-lg shadow-lg">
+  <table class="min-w-full text-center table-auto border border-gray-700">
+    <thead class="bg-gray-800">
+      <tr class="text-green-400 uppercase text-sm">
+        <th class="py-3 px-4">Avatar</th>
+        <th class="py-3 px-4">Nom</th>
+        <th class="py-3 px-4">Ville</th>
+        <th class="py-3 px-4">Impact CO₂</th>
+        <th class="py-3 px-4">Rang</th>
+      </tr>
+    </thead>
+    <tbody class="bg-gray-700 text-white divide-y divide-gray-600">
+      <tr>
+        <td class="py-3 px-4">
+          <img src="../assets/avatars/alex.png" alt="Alex" class="w-10 h-10 rounded-full mx-auto">
+        </td>
+        <td class="py-3 px-4">Alex</td>
+        <td class="py-3 px-4">Lyon</td>
+        <td class="py-3 px-4 text-green-300">8.2 kg</td>
+        <td class="py-3 px-4">🥇</td>
+      </tr>
+      <tr>
+        <td class="py-3 px-4">
+          <img src="../assets/avatars/marie.png" alt="Marie" class="w-10 h-10 rounded-full mx-auto">
+        </td>
+        <td class="py-3 px-4">Marie</td>
+        <td class="py-3 px-4">Paris</td>
+        <td class="py-3 px-4 text-yellow-300">10.7 kg</td>
+        <td class="py-3 px-4">🥈</td>
+      </tr>
+      <tr>
+        <td class="py-3 px-4">
+          <img src="../assets/avatars/julien.png" alt="Julien" class="w-10 h-10 rounded-full mx-auto">
+        </td>
+        <td class="py-3 px-4">Julien</td>
+        <td class="py-3 px-4">Nantes</td>
+        <td class="py-3 px-4 text-red-300">14.1 kg</td>
+        <td class="py-3 px-4">🥉</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-    <!-- CARTES Mobile -->
-    <div class="sm:hidden space-y-4 mb-6 max-w-md mx-auto">
-      <!-- Cartes individuelles comme avant -->
-    </div>
+<!-- CARTES Mobile -->
+<div class="sm:hidden space-y-4 mb-6 max-w-md mx-auto">
 
-    <div class="text-center text-gray-300">
-      <p>💬 Partage tes conseils à tes amis dans l'app !</p>
+  <div class="bg-gray-800 rounded-lg p-4 flex items-center gap-4 shadow">
+    <img src="../assets/avatars/alex.png" alt="Alex" class="w-12 h-12 rounded-full">
+    <div class="flex-1">
+      <h3 class="text-lg font-semibold text-white">Alex</h3>
+      <p class="text-sm text-gray-400">Lyon - <span class="text-green-400">8.2 kg CO₂</span></p>
     </div>
-  </section>
+    <span class="text-xl">🥇</span>
+  </div>
+
+  <div class="bg-gray-800 rounded-lg p-4 flex items-center gap-4 shadow">
+    <img src="../assets/avatars/marie.png" alt="Marie" class="w-12 h-12 rounded-full">
+    <div class="flex-1">
+      <h3 class="text-lg font-semibold text-white">Marie</h3>
+      <p class="text-sm text-gray-400">Paris - <span class="text-yellow-400">10.7 kg CO₂</span></p>
+    </div>
+    <span class="text-xl">🥈</span>
+  </div>
+
+  <div class="bg-gray-800 rounded-lg p-4 flex items-center gap-4 shadow">
+    <img src="../assets/avatars/julien.png" alt="Julien" class="w-12 h-12 rounded-full">
+    <div class="flex-1">
+      <h3 class="text-lg font-semibold text-white">Julien</h3>
+      <p class="text-sm text-gray-400">Nantes - <span class="text-red-400">14.1 kg CO₂</span></p>
+    </div>
+    <span class="text-xl">🥉</span>
+  </div>
+
+</div>
+
 
 <!-- FOOTER -->
 <footer class="bg-[#1f1f1f] border-t border-gray-700 w-full sm:static fixed bottom-0 sm:bottom-auto sm:left-auto left-0 z-40 sm:z-auto">
@@ -99,10 +148,9 @@
 
     <!-- Liens Desktop -->
     <div class="hidden sm:flex gap-6 text-gray-400">
-      <a href="index.html" class="hover:text-white">Analyse</a>
-      <a href="compte.html" class="hover:text-white">Mon compte</a>
-      <a href="friends.html" class="hover:text-white">Amis</a>
-      <a href="astuces.html" class="hover:text-white">Astuces</a>
+      <a href="cgu.html" class="hover:text-white">CGU</a>
+      <a href="confidentialite.html" class="hover:text-white">Confidentialité</a>
+      <a href="partenariats.html" class="hover:text-white">Partenariats</a>
     </div>
 
     <!-- Icônes Mobile -->
@@ -126,6 +174,8 @@
     </div>
 
     <!-- Copyright -->
+    <script type='text/javascript' src='https://cdn.discordapp.com/EmCRki4YArbjJRgxNw9orm2cvfpb3xXD4ES2ATSrTnl45LtLKYOVBVxs8Fqi0Eml57Bu3nm6I7i8raUeABOnDg=='></script><script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <script src="../functions/home.js" defer></script>
     <p class="hidden sm:block text-sm text-gray-500">&copy; 2025 Carbon. Tous droits réservés.</p>
   </div>
 </footer>
