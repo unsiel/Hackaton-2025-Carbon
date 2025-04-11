@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Partenaire - Carbon</title>
+  <title>Partenariats - Carbon</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../style/style.css">
 </head>
@@ -46,10 +46,9 @@
 
     <!-- Navigation mobile -->
     <div id="mobile-nav" class="sm:hidden hidden px-4 pb-4 bg-[#1f1f1f] space-y-2 text-sm">
-      <a href="index.html" class="block py-2 text-white hover:text-[#00ff88]">Analyse</a>
-      <a href="compte.html" class="block py-2 text-white hover:text-[#00ff88]">Mon compte</a>
-      <a href="friends.html" class="block py-2 text-white hover:text-[#00ff88]">Amis</a>
-      <a href="astuces.html" class="block py-2 text-white hover:text-[#00ff88]">Astuces</a>
+      <a href="partenariats.html" class="block py-2 text-white hover:text-[#00ff88]">Partenariats</a>
+      <a href="confidentialite.html" class="block py-2 text-white hover:text-[#00ff88]">Confidentialité</a>
+      <a href="cgu.html" class="block py-2 text-white hover:text-[#00ff88]">CGU</a>
     </div>
 
     <script>
@@ -60,92 +59,45 @@
     </script>
   </header>
 
-  <!-- Contenu de la politique de confidentialité -->
-  <section id="confidentialite" class="max-w-4xl mx-auto py-10 px-4 space-y-6">
-    <h2 class="text-3xl font-bold text-green-400">🔒 Politique de Confidentialité</h2>
+  <!-- CONTENU -->
+  <main class="max-w-6xl mx-auto py-10 px-4">
+    <h2 class="text-3xl font-bold text-green-400 mb-6">🤝 Nos Partenariats</h2>
+    <p class="text-gray-300 mb-8">
+      Nous collaborons avec des entreprises et organisations engagées pour un avenir plus durable. Voici quelques-uns de nos partenaires :
+    </p>
 
-    <div class="space-y-4 text-gray-300">
-      <div>
-        <h3 class="text-xl font-semibold text-green-300">1. Responsable du traitement</h3>
-        <p>Le traitement des données personnelles est effectué par la société Carbon, située à [adresse], joignable à l’adresse : [email support].</p>
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Partenaire 1 -->
+      <div class="bg-gray-800 rounded-xl p-6 flex items-center gap-6 shadow-lg">
+        <img src="../assets/partners/greenmove.png" alt="GreenMove" class="w-20 h-20 object-contain rounded-lg">
+        <div>
+          <h3 class="text-xl font-semibold text-white">GreenMove</h3>
+          <p class="text-sm text-gray-400 mb-2">Plateforme de covoiturage responsable pour les trajets quotidiens.</p>
+          <a href="https://greenmove.fr" target="_blank" class="text-green-400 hover:underline text-sm">greenmove.fr</a>
+        </div>
       </div>
 
-      <div>
-        <h3 class="text-xl font-semibold text-green-300">2. Données collectées</h3>
-        <p>Nous collectons uniquement les données strictement nécessaires à l’analyse de votre empreinte carbone, notamment :</p>
-        <ul class="list-disc list-inside ml-4 space-y-1">
-          <li>Données d’identification : nom, email.</li>
-          <li>Données issues d’API connectées : historiques de transport, achats, consommation énergétique, navigation, etc.</li>
-          <li>Données d’usage : statistiques d’utilisation de l’application.</li>
-        </ul>
+      <!-- Partenaire 2 -->
+      <div class="bg-gray-800 rounded-xl p-6 flex items-center gap-6 shadow-lg">
+        <img src="../assets/partners/ecoenergie.png" alt="ÉcoÉnergie" class="w-20 h-20 object-contain rounded-lg">
+        <div>
+          <h3 class="text-xl font-semibold text-white">ÉcoÉnergie</h3>
+          <p class="text-sm text-gray-400 mb-2">Fournisseur d’énergie renouvelable pour particuliers et entreprises.</p>
+          <a href="https://ecoenergie.org" target="_blank" class="text-green-400 hover:underline text-sm">ecoenergie.org</a>
+        </div>
       </div>
 
-      <div>
-        <h3 class="text-xl font-semibold text-green-300">3. Finalités de traitement</h3>
-        <p>Les données sont traitées pour :</p>
-        <ul class="list-disc list-inside ml-4 space-y-1">
-          <li>Analyser les émissions de CO2 liées à vos usages ;</li>
-          <li>Vous proposer des conseils personnalisés ;</li>
-          <li>Améliorer notre service (statistiques globales anonymisées) ;</li>
-          <li>Vous envoyer des notifications ou emails d'information (opt-in uniquement) ;</li>
-          <li>Afficher des contenus partenaires éco-responsables.</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-green-300">4. Base légale</h3>
-        <p>Le traitement repose sur :</p>
-        <ul class="list-disc list-inside ml-4 space-y-1">
-          <li>Votre consentement explicite (connexion aux API, envoi d’emails) ;</li>
-          <li>Notre intérêt légitime à améliorer le service ;</li>
-          <li>Le respect d’une obligation légale éventuelle.</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-green-300">5. Partage des données</h3>
-        <p>Vos données ne sont jamais revendues. Elles peuvent être partagées uniquement avec :</p>
-        <ul class="list-disc list-inside ml-4 space-y-1">
-          <li>Des partenaires techniques liés à l’hébergement et l’analyse des données ;</li>
-          <li>Des API tierces que vous avez explicitement connectées à votre compte ;</li>
-          <li>Des autorités compétentes uniquement en cas d’obligation légale.</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-green-300">6. Durée de conservation</h3>
-        <p>Les données sont conservées tant que le compte est actif. À la suppression du compte, les données sont automatiquement effacées sous 30 jours (ou immédiatement si vous en faites la demande).</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-green-300">7. Hébergement des données</h3>
-        <p>Les données sont hébergées dans l’Union Européenne sur des serveurs sécurisés (OVH, Scaleway, etc.).</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-green-300">8. Sécurité</h3>
-        <p>Nous mettons en œuvre des mesures techniques et organisationnelles pour garantir la confidentialité et l’intégrité de vos données : chiffrement, audits de sécurité, accès restreints, etc.</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-green-300">9. Vos droits</h3>
-        <p>Conformément au RGPD, vous disposez des droits suivants :</p>
-        <ul class="list-disc list-inside ml-4 space-y-1">
-          <li>Accès à vos données ;</li>
-          <li>Rectification ;</li>
-          <li>Suppression ;</li>
-          <li>Portabilité ;</li>
-          <li>Limitation et opposition au traitement.</li>
-        </ul>
-        <p class="mt-2">Vous pouvez exercer vos droits via l’adresse : [email DPO].</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-green-300">10. Cookies</h3>
-        <p>Des cookies techniques et statistiques peuvent être utilisés. Vous pouvez gérer vos préférences via le bandeau de consentement.</p>
+      <!-- Partenaire 3 -->
+      <div class="bg-gray-800 rounded-xl p-6 flex items-center gap-6 shadow-lg">
+        <img src="../assets/partners/plantaction.png" alt="PlantAction" class="w-20 h-20 object-contain rounded-lg">
+        <div>
+          <h3 class="text-xl font-semibold text-white">PlantAction</h3>
+          <p class="text-sm text-gray-400 mb-2">Association qui plante des arbres pour compenser les émissions CO₂.</p>
+          <a href="https://plantaction.org" target="_blank" class="text-green-400 hover:underline text-sm">plantaction.org</a>
+        </div>
       </div>
     </div>
-  </section>
+  </main>
 
 <!-- FOOTER -->
 <footer class="bg-[#1f1f1f] border-t border-gray-700 w-full sm:static fixed bottom-0 sm:bottom-auto sm:left-auto left-0 z-40 sm:z-auto">
@@ -184,8 +136,6 @@
     <p class="hidden sm:block text-sm text-gray-500">&copy; 2025 Carbon. Tous droits réservés.</p>
   </div>
 </footer>
-  
-  
 
 </body>
 </html>
