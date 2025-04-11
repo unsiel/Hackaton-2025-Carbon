@@ -2,44 +2,135 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conditions Générales d’Utilisation</title>
-  <script defer src="../functions/script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Asctuces - Carbon</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style/style.css">
 </head>
-
 <body class="bg-gray-950 text-white min-h-screen font-sans">
 
-  <!-- Header -->
-  <div data-include="../components/header.html"></div>
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-[#1f1f1f] border-b border-gray-700 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between relative">
 
-  <section id="cgu" class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
-    <h2 class="text-emerald-400 text-2xl sm:text-3xl font-bold text-center mb-8">
-      Conditions Générales d’Utilisation
-    </h2>
+      <!-- Burger -->
+      <button id="burger-menu" class="text-white sm:hidden z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
 
-    <div class="space-y-8 text-sm sm:text-base leading-relaxed text-gray-200">
+      <!-- Logo -->
+      <a href="index.html" class="absolute left-1/2 transform -translate-x-1/2 sm:static sm:translate-x-0">
+        <img src="../assets/Logo sans texte.svg" alt="Logo Mobile" class="h-8 sm:hidden">
+        <img src="../assets/Logo avec texte.svg" alt="Logo Desktop" class="h-12 hidden sm:block">
+      </a>
 
-      <div>
-        <h3 class="text-xl sm:text-2xl font-semibold text-white mb-2">1. Objet</h3>
-        <p>
-          Les présentes Conditions Générales d’Utilisation ont pour objet de définir les modalités et conditions dans lesquelles les utilisateurs peuvent accéder et utiliser l’application Carbon (ci-après “l’Application”). Carbon est une plateforme web permettant d’analyser les émissions de CO2 des utilisateurs à partir des données collectées via des API tierces connectées (mobilité, consommation, données numériques, etc.).
-        </p>
-      </div>
+      <!-- Icône compte (mobile) -->
+      <a href="compte.html" class="text-white sm:hidden z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5.121 17.804A4 4 0 0112 15a4 4 0 016.879 2.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+      </a>
 
-      <div>
-        <h3 class="text-xl sm:text-2xl font-semibold text-white mb-2">2. Accès au service</h3>
-        <p>
-          L’accès à Carbon nécessite une connexion Internet et un navigateur compatible. Certaines fonctionnalités sont disponibles uniquement après inscription et authentification.
-        </p>
-      </div>
+      <!-- Navigation desktop -->
+      <nav class="hidden sm:flex gap-6 text-white text-sm font-medium">
+        <a href="index.html" class="hover:text-[#00ff88] transition">Analyse</a>
+        <a href="compte.html" class="hover:text-[#00ff88] transition">Mon compte</a>
+        <a href="friends.html" class="hover:text-[#00ff88] transition">Amis</a>
+        <a href="astuces.html" class="hover:text-[#00ff88] transition">Astuces</a>
+      </nav>
+    </div>
 
-      <div>
-        <h3 class="text-xl sm:text-2xl font-semibold text-white mb-2">3. Inscription et compte utilisateur</h3>
-        <p>
-          L’utilisateur doit créer un compte en fournissant une adresse email valide et un mot de passe sécurisé. Il s’engage à fournir des informations exactes et à jour. Il est seul responsable de la confidentialité de ses identifiants.
-        </p>
-      </div>
+    <!-- Navigation mobile -->
+    <div id="mobile-nav" class="sm:hidden hidden px-4 pb-4 bg-[#1f1f1f] space-y-2 text-sm">
+      <a href="index.html" class="block py-2 text-white hover:text-[#00ff88]">Analyse</a>
+      <a href="compte.html" class="block py-2 text-white hover:text-[#00ff88]">Mon compte</a>
+      <a href="friends.html" class="block py-2 text-white hover:text-[#00ff88]">Amis</a>
+      <a href="astuces.html" class="block py-2 text-white hover:text-[#00ff88]">Astuces</a>
+    </div>
 
-      <div>
-        <h3 class="text-xl sm:text-2xl font-semibold text-white
+    <script>
+      document.getElementById('burger-menu').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById('mobile-nav').classList.toggle('hidden');
+      });
+    </script>
+  </header>
+<body class="bg-gray-950 text-white font-sans">
+
+  <!-- Contenu CGU -->
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-bold text-[#00ff88] mb-6">Conditions Générales d’Utilisation</h1>
+
+    <section class="space-y-6 text-gray-300 text-sm leading-relaxed">
+      <p>Bienvenue sur <strong>Carbon</strong>. En accédant à ce site, vous acceptez pleinement et entièrement les présentes conditions d’utilisation.</p>
+
+      <h2 class="text-xl font-semibold text-white">1. Objet</h2>
+      <p>Les présentes CGU ont pour objet de définir les modalités de mise à disposition du service et les conditions d’utilisation de la plateforme Carbon.</p>
+
+      <h2 class="text-xl font-semibold text-white">2. Accès au service</h2>
+      <p>L’accès au service est gratuit. Il nécessite une connexion internet. Carbon ne saurait être tenu responsable des éventuels frais liés à cet accès.</p>
+
+      <h2 class="text-xl font-semibold text-white">3. Données personnelles</h2>
+      <p>Vos données sont utilisées uniquement dans le cadre de votre analyse d’impact. Aucune donnée n’est vendue ou cédée à des tiers. Consultez notre politique de confidentialité pour plus d’informations.</p>
+
+      <h2 class="text-xl font-semibold text-white">4. Propriété intellectuelle</h2>
+      <p>Tous les contenus du site (textes, images, logos, etc.) sont protégés par le droit d’auteur. Toute reproduction est interdite sans autorisation.</p>
+
+      <h2 class="text-xl font-semibold text-white">5. Responsabilités</h2>
+      <p>Carbon ne peut être tenu responsable des dommages directs ou indirects liés à l’utilisation de la plateforme.</p>
+
+      <h2 class="text-xl font-semibold text-white">6. Modifications</h2>
+      <p>Carbon se réserve le droit de modifier les CGU à tout moment. Les utilisateurs seront informés des changements via la plateforme.</p>
+
+      <h2 class="text-xl font-semibold text-white">7. Droit applicable</h2>
+      <p>Les présentes CGU sont soumises au droit français. En cas de litige, les tribunaux compétents seront ceux du siège social de Carbon.</p>
+    </section>
+
+    <p class="mt-10 text-gray-500 text-xs">Dernière mise à jour : 11 avril 2025</p>
+  </main>
+
+  <!-- FOOTER -->
+<footer class="bg-[#1f1f1f] border-t border-gray-700 w-full sm:static fixed bottom-0 sm:bottom-auto sm:left-auto left-0 z-40 sm:z-auto">
+  <div class="max-w-6xl mx-auto py-4 px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+
+    <!-- Liens Desktop -->
+    <div class="hidden sm:flex gap-6 text-gray-400">
+      <a href="index.html" class="hover:text-white">Analyse</a>
+      <a href="compte.html" class="hover:text-white">Mon compte</a>
+      <a href="friends.html" class="hover:text-white">Amis</a>
+      <a href="astuces.html" class="hover:text-white">Astuces</a>
+    </div>
+
+    <!-- Icônes Mobile -->
+    <div class="flex sm:hidden justify-between w-full max-w-xs text-white text-2xl">
+      <a href="index.html" aria-label="Analyse" class="flex-1 text-center">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3z"/>
+        </svg>
+      </a>
+      <a href="astuces.html" aria-label="Astuces" class="flex-1 text-center">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l4-4-4-4m8 8l-4-4 4-4" />
+        </svg>
+      </a>
+      <a href="friends.html" aria-label="Amis" class="flex-1 text-center">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M12 4a4 4 0 110 8 4 4 0 010-8z" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <p class="hidden sm:block text-sm text-gray-500">&copy; 2025 Carbon. Tous droits réservés.</p>
+  </div>
+</footer>
+
+
+  <script src="../functions/script.js"></script>
+</body>
+</html>
