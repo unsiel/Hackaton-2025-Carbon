@@ -251,3 +251,53 @@ footer {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Partenariats, CGU, Confidentialité */
+
+#partenariats, #confidentialite, #cgu {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+#partenariats h2,
+#confidentialite h2,
+#cgu h2 {
+  color: #00ff88;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#partenariats h3,
+#confidentialite h3,
+#cgu h3 {
+  color: #00ff88;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#partenariats ul,
+#confidentialite ul,
+#cgu ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+#partenariats li,
+#confidentialite li,
+#cgu li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+#partenariats p,
+#confidentialite p,
+#cgu p {
+  margin-bottom: 1.2em;
+  line-height: 1.7;
+}
+
+a {
+  color: #00ff88;
+  text-decoration: underline;
+}
