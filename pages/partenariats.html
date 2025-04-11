@@ -1,48 +1,112 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Carbon – Partenariats</title>
-  <link rel="stylesheet" href="../style/style.css">
+  <meta charset="UTF-8" />
+  <title>Carbon – Politique de Confidentialité</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fichier de styles perso -->
+  <link rel="stylesheet" href="../style/style.css" />
+
+  <!-- Script d'inclusion -->
   <script defer src="../functions/script.js"></script>
 </head>
-<body>
 
-  <!-- Inclusion du header -->
+<body class="bg-gray-950 text-white min-h-screen font-sans">
+
+  <!-- Header -->
   <div data-include="../components/header.html"></div>
 
-  <section id="partenariats" class="active">
-    <h2>🤝 Nos Partenariats</h2>
-    <p>
-      Chez <strong>Carbon</strong>, nous croyons que l’impact positif passe par la collaboration.
-      C’est pourquoi nous sommes ouverts à des <strong>partenariats écoresponsables</strong> pour enrichir notre plateforme et sensibiliser davantage d’utilisateurs.
-    </p>
+  <!-- Contenu de la politique de confidentialité -->
+  <section id="confidentialite" class="max-w-4xl mx-auto py-10 px-4 space-y-6">
+    <h2 class="text-3xl font-bold text-green-400">🔒 Politique de Confidentialité</h2>
 
-    <h3>📌 Types de partenaires que nous recherchons :</h3>
-    <ul>
-      <li>🌿 Associations et ONG engagées pour la transition écologique</li>
-      <li>🚄 Acteurs de la mobilité douce (ex : BlaBlaCar, SNCF, Lime…)</li>
-      <li>🥦 Plateformes d’alimentation durable (Too Good To Go, La Ruche Qui Dit Oui, etc.)</li>
-      <li>💡 Fournisseurs d’énergie verte</li>
-      <li>📱 Startups ou projets tech écoresponsables</li>
-    </ul>
+    <div class="space-y-4 text-gray-300">
+      <div>
+        <h3 class="text-xl font-semibold text-green-300">1. Responsable du traitement</h3>
+        <p>Le traitement des données personnelles est effectué par la société Carbon, située à [adresse], joignable à l’adresse : [email support].</p>
+      </div>
 
-    <h3>🚀 Ce que nous offrons à nos partenaires :</h3>
-    <ul>
-      <li>🎯 Visibilité ciblée auprès d’une communauté engagée</li>
-      <li>📊 Intégration de vos données ou services via API (dans notre dashboard)</li>
-      <li>🤝 Collaboration sur des campagnes, défis ou contenus éducatifs</li>
-      <li>🌍 Participation à un projet à impact avec transparence & éthique</li>
-    </ul>
+      <div>
+        <h3 class="text-xl font-semibold text-green-300">2. Données collectées</h3>
+        <p>Nous collectons uniquement les données strictement nécessaires à l’analyse de votre empreinte carbone, notamment :</p>
+        <ul class="list-disc list-inside ml-4 space-y-1">
+          <li>Données d’identification : nom, email.</li>
+          <li>Données issues d’API connectées : historiques de transport, achats, consommation énergétique, navigation, etc.</li>
+          <li>Données d’usage : statistiques d’utilisation de l’application.</li>
+        </ul>
+      </div>
 
-    <h3>📬 Intéressé(e) ?</h3>
-    <p>
-      Vous pouvez nous contacter à :
-      <a href="mailto:partenariats@carbonapp.fr">partenariats@carbonapp.fr</a>
-    </p>
+      <div>
+        <h3 class="text-xl font-semibold text-green-300">3. Finalités de traitement</h3>
+        <p>Les données sont traitées pour :</p>
+        <ul class="list-disc list-inside ml-4 space-y-1">
+          <li>Analyser les émissions de CO2 liées à vos usages ;</li>
+          <li>Vous proposer des conseils personnalisés ;</li>
+          <li>Améliorer notre service (statistiques globales anonymisées) ;</li>
+          <li>Vous envoyer des notifications ou emails d'information (opt-in uniquement) ;</li>
+          <li>Afficher des contenus partenaires éco-responsables.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-green-300">4. Base légale</h3>
+        <p>Le traitement repose sur :</p>
+        <ul class="list-disc list-inside ml-4 space-y-1">
+          <li>Votre consentement explicite (connexion aux API, envoi d’emails) ;</li>
+          <li>Notre intérêt légitime à améliorer le service ;</li>
+          <li>Le respect d’une obligation légale éventuelle.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-green-300">5. Partage des données</h3>
+        <p>Vos données ne sont jamais revendues. Elles peuvent être partagées uniquement avec :</p>
+        <ul class="list-disc list-inside ml-4 space-y-1">
+          <li>Des partenaires techniques liés à l’hébergement et l’analyse des données ;</li>
+          <li>Des API tierces que vous avez explicitement connectées à votre compte ;</li>
+          <li>Des autorités compétentes uniquement en cas d’obligation légale.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-green-300">6. Durée de conservation</h3>
+        <p>Les données sont conservées tant que le compte est actif. À la suppression du compte, les données sont automatiquement effacées sous 30 jours (ou immédiatement si vous en faites la demande).</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-green-300">7. Hébergement des données</h3>
+        <p>Les données sont hébergées dans l’Union Européenne sur des serveurs sécurisés (OVH, Scaleway, etc.).</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-green-300">8. Sécurité</h3>
+        <p>Nous mettons en œuvre des mesures techniques et organisationnelles pour garantir la confidentialité et l’intégrité de vos données : chiffrement, audits de sécurité, accès restreints, etc.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-green-300">9. Vos droits</h3>
+        <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+        <ul class="list-disc list-inside ml-4 space-y-1">
+          <li>Accès à vos données ;</li>
+          <li>Rectification ;</li>
+          <li>Suppression ;</li>
+          <li>Portabilité ;</li>
+          <li>Limitation et opposition au traitement.</li>
+        </ul>
+        <p class="mt-2">Vous pouvez exercer vos droits via l’adresse : [email DPO].</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-green-300">10. Cookies</h3>
+        <p>Des cookies techniques et statistiques peuvent être utilisés. Vous pouvez gérer vos préférences via le bandeau de consentement.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Inclusion du footer -->
+  <!-- Footer -->
   <div data-include="../components/footer.html"></div>
 
 </body>
