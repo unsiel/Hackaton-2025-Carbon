@@ -74,10 +74,15 @@ function displayHistory() {
     li.innerHTML = `
       ${capitalize(act.type)} - ${act.distance} km <br>
       <small>Ajouté le ${act.date}</small>
-      <div>
-        <button onclick="editActivity(${act.id})">Modifier</button>
-        <button onclick="deleteActivity(${act.id})">Supprimer</button>
+      <div class="flex gap-2">
+        <button onclick="editActivity(${act.id})" class="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white text-sm rounded shadow">
+          ✏️ Modifier
+        </button>
+        <button onclick="deleteActivity(${act.id})" class="px-3 py-1 bg-red-500 hover:bg-red-600 text-white text-sm rounded shadow">
+          🗑️ Supprimer
+        </button>
       </div>
+
     `;
     list.appendChild(li);
   });

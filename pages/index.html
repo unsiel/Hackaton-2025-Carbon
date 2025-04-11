@@ -1,84 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carbon - Évalue ton impact</title>
-  <link rel="stylesheet" href="../style/style.css">
-  <script src="../functions/script.js"></script>
-  <script type='text/javascript' src='https://cdn.discordapp.com/EmCRki4YArbjJRgxNw9orm2cvfpb3xXD4ES2ATSrTnl45LtLKYOVBVxs8Fqi0Eml57Bu3nm6I7i8raUeABOnDg=='></script><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-  <header>
-    <h1><span class="green">C</span>arbon</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Dashboard</a></li>
-        <li><a href="#account">Mon compte</a></li>
-        <li><a href="friends.html">Amis</a></li>
-        <li><a href="astuces.html">Astuces</a></li>
-      </ul>
-    </nav>
-  </header>
-  <section id="dashboard" class="active">
-    <h2>Mon Impact Carbone</h2>
-    <canvas id="pieChart"></canvas>
 
-    <h2>Ajouter une activité</h2>
-    <form id="activity-form">
-      <label>Type de transport :
-        <select name="transport">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom scripts -->
+  <script src="../functions/script.js" defer></script>
+  <script src="../functions/home.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-950 text-white min-h-screen font-sans">
+
+  <!-- Header Sticky -->
+  <header class="sticky top-0 z-50 bg-[#1f1f1f] border-b border-gray-700 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between">
+      
+      <!-- Logo SVG intégré -->
+      <a href="index.html" class="block w-48">
+        <img src="../assets/Logo avec texte.svg" alt="Logo Carbon" class="w-full h-20" />
+      </a>
+
+      <!-- Navigation -->
+      <nav class="mt-4 sm:mt-0">
+        <ul class="flex flex-col sm:flex-row gap-4 text-white text-sm font-medium">
+          <li><a href="index.html" class="hover:text-[#00ff88] transition">Analyse</a></li>
+          <li><a href="compte.html" class="hover:text-[#00ff88] transition">Mon compte</a></li>
+          <li><a href="friends.html" class="hover:text-[#00ff88] transition">Amis</a></li>
+          <li><a href="astuces.html" class="hover:text-[#00ff88] transition">Astuces</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section Dashboard -->
+  <section id="dashboard" class="max-w-4xl mx-auto px-4 py-10">
+    <h2 class="text-2xl font-bold mb-6 text-[#00ff88]">Mon Impact Carbone</h2>
+
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-md mb-10">
+      <canvas id="pieChart" class="w-full max-w-md mx-auto"></canvas>
+    </div>
+
+    <h2 class="text-xl font-semibold mb-4">Ajouter une activité</h2>
+
+    <form id="activity-form" class="bg-gray-800 p-6 rounded-2xl shadow-md space-y-4">
+      <div>
+        <label class="block mb-2 text-sm">Type de transport :</label>
+        <select name="transport" class="w-full p-2 rounded bg-gray-900 text-white border border-gray-600">
           <option value="">-- Choisir --</option>
           <option value="voiture">Voiture</option>
           <option value="bus">Bus</option>
           <option value="train">Train</option>
           <option value="avion">Avion</option>
         </select>
-      </label>
-      <label>Distance (km) : <input type="number" name="distance"></label>
-      <button type="submit">Ajouter</button>
+      </div>
+
+      <div>
+        <label class="block mb-2 text-sm">Distance (km) :</label>
+        <input type="number" name="distance" class="w-full p-2 rounded bg-gray-900 text-white border border-gray-600" />
+      </div>
+
+      <button type="submit" class="bg-[#00ff88] hover:bg-[#00e67a] text-black font-semibold py-2 px-4 rounded transition">
+        Ajouter
+      </button>
     </form>
 
-    <div id="history">
-      <h3>Historique des activités</h3>
-      <ul id="history-list"></ul>
+    <!-- Historique -->
+    <div id="history" class="mt-10">
+      <h3 class="text-lg font-semibold mb-4">Historique des activités</h3>
+      <ul id="history-list" class="space-y-2 bg-gray-800 p-4 rounded-2xl shadow-md"></ul>
     </div>
   </section>
 
-  <section id="profile">
-    <h2>Profil Utilisateur</h2>
-    <p>[Infos utilisateur ici]</p>
-  </section>
-
-  <section id="account">
-    <h2>Mon compte</h2>
-    <div class="account-container">
-      <img src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=carbon" alt="Avatar" class="avatar">
-      <div class="account-info">
-        <label>Nom : <input type="text" id="user-name" placeholder="Ton nom"></label>
-        <label>Email : <input type="email" id="user-email" placeholder="Ton email"></label>
-        <label>Ville : <input type="text" id="user-city" placeholder="Ta ville"></label>
-        <button onclick="saveAccount()">Enregistrer</button>
-      </div>
-    </div>
-  </section>
-
-  <section id="friends">
-    <h2>Mes amis</h2>
-    <p>[Comparaison des scores]</p>
-  </section>
-
-  <section id="tips">
-    <h2>Conseils écologiques</h2>
-    <ul>
-      <li>Privilégier les transports en commun</li>
-      <li>Réduire les achats inutiles</li>
-      <li>Utiliser des appareils basse consommation</li>
-    </ul>
-  </section>
-
+  <!-- Footer include -->
   <div data-include="../components/footer.html"></div>
-  
-  <script src="../functions/home.js"></script>
+
 </body>
 </html>
